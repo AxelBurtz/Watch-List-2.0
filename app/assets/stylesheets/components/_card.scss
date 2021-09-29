@@ -1,0 +1,15 @@
+.card-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 20px;
+  justify-items: center;
+  grid-gap: 15px;
+}
+
+.card-photo {
+  height: 400px;
+  img {
+    height:300px;
+  }
+  padding: 20px;
+}

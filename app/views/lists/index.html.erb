@@ -1,10 +1,18 @@
-<% @lists.each do |list| %>
-  <% if list.photo.attached? %>
-  <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
-  <% else %>
-  <% end %>
-  <p> <%= link_to list.name, list_path(list) %></p>
-  <p> <%= link_to "Delete", list_path(list), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<%= render "shared/banner" %>
 
-<% end %>
-  <%= link_to "Add list", new_list_path %>
+
+<div class="container">
+  <div class="card-list">
+    <% @lists.each do |list| %>
+      <div class="card-photo">
+        <% if list.photo.attached? %>
+          <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+          <% else %>
+        <% end %>
+        <p> <%= link_to list.name, list_path(list) %></p>
+        <p> <%= link_to "Delete", list_path(list), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div>
+    <% end %>
+  </div>
+    <%= link_to "Add list", new_list_path %>
+</div>
